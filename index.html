@@ -5,12 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diego Cornejo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         body {
-            background-color: yellow;
+            background-image: url("./imagen\ fondo.jpeg");
+            background-size: cover;
+            background-position: center;
             color: black;
             font-family: monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        main {
+            max-width: 512px;
+            padding: 16px;
+            margin: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+
+        }
+        img{
+            display: block;
+            border-radius: 50%;
+        }
+        h1,
+        h2,
+        p{
+            margin: 0;
             text-align: center;
+        }
+        h2{ 
+            font-size: 14px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 16px;
+            list-style: none;
+        }
+        a{
+            color: white;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -20,7 +62,6 @@
     <img src="data:image/jpeg;base64,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" alt="diegoconrejo" height="256">
  <h1>
     diego cornejo
-    <sup>28</sup>
  </h1>
  <h2>TRABAJADOR Y ESTUDIANTE</h2>
  <span>Lima, Perú</span>
@@ -31,10 +72,13 @@
 </ul>
 <ul>
     <li>
-     <a href="http://https://www.instagram.com/diegocornejom95/">Instagram</a>
+     <a href="http://www.instagram.com/diegocornejom95" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
+    </li>
+    <li>
+    <a href="https://github.com/diegofer1995/diegocornejo" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
     </li>
 </ul>
 </main>
-</body>
+</body> 
 
 </html>
